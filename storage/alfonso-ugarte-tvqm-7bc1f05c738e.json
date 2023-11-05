@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "alfonso-ugarte-tvqm",
+  "private_key_id": "7bc1f05c738e1a1d7823c5255c16fee6e943ada9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCYlbO7Q66ioqd3\nqOO7qGoH8dPgGG0UZGXLdbh9o1PLnxCdUqPHGglYhUT2hjrecvbTJojTK0+Bzf/P\noDhGmKK1FgAEq30/euiencotEQMcQ5apNJSh8C1TyvpMBBe4qOBDUZ/4IuvjSfCI\nAQVNzO+HBBDeJXEubAqO88KsJrFwn0PBOMBZbO3XYea+lKMwtghgxwBBzG1jXpMX\n4Coir32JVt/XAGEX0p2Z5U83l152UV9DX6OXgTdiHQLJhxy/e+akGzLNCSHY3QUw\nc7uzD/Kd+9PFwBauJ6FbP9KcU171XSMkd7MWy2QOzcV3obETwcZN6mcjzoehbuVs\nJN1yJohDAgMBAAECggEAO3M0dHWR8Mb8BejVVjPvoAnOWgVaVrQpX0UOLVF6IB9p\nK0rcCgKwen9uV7kD7dEQL0PX0qMQ1svq7DwKQSNOXczlE+y3H4klYkurTrTOp/AD\nnwigEppQJtIyhHShw2509nWypM0CaGvSHkN7jA0ZlFr2sX8YIpSw5nK+OjHXN8AT\nhTkD6+a9d7UsvlMSwbeqr/fxjNEyEUBIUA5SJ3la6x5IGe5dS/JDf4NwflDjAUfs\nGGztOxkfMU1T0dmSJ50T1p+8eM7tx4BD5hT4vaX2cEepAk72ZqZ7ZKEuPlLMe0Dj\n+MVssNlmYsQ6/vaMT0Ls/2GA5+QUw9RHT4kIbCTeDQKBgQDVEToX/NWlcEob5lej\nFSWd900UH5npRHJQagtNgIa73iwA8alM6BPOQtEgqaUieNN2nulJXzfv5UDiv540\ncp9PK7Ggg6wWwgf2BIkGMF0YiFNrq+QO8uRerN2q4F1QBVx6Zs83AoICpEHD7qtA\nJO3fGSOpWFg4lOcAVqG9FC4t9QKBgQC3VJILFxJLOv+qhul7HU8x2yAwB5oRM8mr\n3Bk5g1w9Q98E+J1kN9m5bmtPSSGgnGi+7+9pHNuH0W5ZGlpbjuxjODuAqoIMD/gh\nR4dd2uWzfQlOgsc5kWBx2IKuALJU/wmN/aSUf72cTiIOqqsgLueCvv1trkwzEXkZ\nwXLdgRUCVwKBgQDJsD3yuQYwTeQJFvk8SedK6e8Prn5OHtmrH0bFvXVM3xl+Z0Pg\npgshg4Rcy9mikQdzUSf5qWXU84mBWuvSL/J3yh+hlyLOhCtvCYn/zsZBU8LLuHHw\naKIesLpAZ5RNDFYnE6zxILGa+Iu8ge+fj5WQS0bDpfoUzXcBjgAacMDqBQKBgQCM\nekc2LEWeU+UYnCxIZFsMzuXJJ+oMiGxePlct1NRXNaysuHySEKHLDys3I8ias38n\n397J4oztc7Nkn2bhhZDpLmuZ2g2whIQTrCWz60nb0VHSUS+rkxQd6FOqVWpQ6uQ9\nY0A7ce6u2MgMCQb7sDVB4Gt9IfPNpfPvomYMCR86HQKBgQC9uc/0Ks5JUC5iD5i1\nAG//LndzQceR8XsU8iqBC6OnTVJFU2rLGCecSBCc0nu/ZVHh+S1+hmGddH+e7EW4\nRzTbIMsDdUJOaiacRcVa6OxAZUtkUOIULbLydL9fMn1K2diFY01SrO9jf+t1PA6u\nnxDlkBSlB4zxQYmP1Z3oeXZJTg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "soporte-alfonso-ugarte-127@alfonso-ugarte-tvqm.iam.gserviceaccount.com",
+  "client_id": "108977790900078023550",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/soporte-alfonso-ugarte-127%40alfonso-ugarte-tvqm.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
