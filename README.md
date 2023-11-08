@@ -13,17 +13,43 @@ Proyecto de mejora e innovacion Carrera de Ingenieria de Software con IA - SENAT
 
 ## RECURSOS NECESARIOS
 - Laragon Full (64-bit): Apache 2.4, Nginx, MySQL 8, PHP 8, Redis, Memcached, Node.js 18, npm, git https://laragon.org/download/index.html
-- Instalacion de laravel https://laravel.com/docs/4.2#install-laravel
+  
+## Entorno de desarrollo
+- Instalacion de laragon en el equipo
+  
+- Iniciallizar los servicios de laragon
+  
+- Instalacion de laravel desde la consola de laragon https://laravel.com/docs/4.2#install-laravel
 ```
 composer global require "laravel/installer=~1.1"
 ```
+- Clonar el repositorio de GitHub en la carpeta base www de laragon
+- RUTA
+```
+C:\laragon\www
+```
+- REPOSITORIO
+```
+git clone https://github.com/JharlynnGb/proyectofinal.git
+```
+- Desde la consola de laragon abrir el repositorio clonado
+```
+cd proyectofinal
+```
+- limpiar la cache del proyecto C:\laragon\www\AlfonsoUgarte(main -> origin)
+```
+php artisan cache:clear
+```
+- remplazar el .env.example por el .env desde la consola 
+```
+mv .env.example .env
+```
+- Generar una nueva key para el proyecto en el .env
+```
+php artisan key:generate
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
+  
 ### Premium Partners
 
 - **[Vehikl](https://vehikl.com/)**
