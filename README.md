@@ -220,18 +220,21 @@ INSERT INTO `usuarios` (`id`, `username`, `correo`, `password`, `rol`, `remember
 --las tablas estudiante y docente se trabajan desde el sistema
 ```
 
-## Contributing
+## EJECUCION 
+Si los pasos anteriores se completaron sin problemas correr el programa
+```
+php artisan serv
+```
+Esta seria la respuesta de la consola si todo esta okey 
+```
+C:\laragon\www\proyectofinal(main -> origin)
+λ php artisan serv
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   INFO  Server running on [http://127.0.0.1:8000].
 
-## Code of Conduct
+  Press Ctrl+C to stop the server
+```
+Pegar el servidor http://127.0.0.1:8000 en el navegador y probar la demo 
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## PRUEBA
+[inicio]()
