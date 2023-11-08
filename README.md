@@ -11,11 +11,11 @@
 
 Proyecto de mejora e innovacion Carrera de Ingenieria de Software con IA - SENATI 2023
 
-## Learning Laravel
+## RECURSOS NECESARIOS
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Instalacion de laravel https://laravel.com/docs/4.2#install-laravel
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+composer global require "laravel/installer=~1.1"
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
