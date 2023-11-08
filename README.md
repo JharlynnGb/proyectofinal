@@ -237,5 +237,5 @@ C:\laragon\www\proyectofinal(main -> origin)
 Pegar el servidor http://127.0.0.1:8000 en el navegador y probar la demo 
 
 ## PRUEBA
-<img src="public/screens/inicio.png" alt="Texto alternativo" width="500" />
+<img src="public/screens/inicio.png" alt="Texto alternativo" width="700" heignt="700" />
 
