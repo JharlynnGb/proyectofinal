@@ -12,14 +12,11 @@
 Proyecto de mejora e innovacion Carrera de Ingenieria de Software con IA - SENATI 2023
 
 ## RECURSOS NECESARIOS
-
+- Laragon Full (64-bit): Apache 2.4, Nginx, MySQL 8, PHP 8, Redis, Memcached, Node.js 18, npm, git https://laragon.org/download/index.html
 - Instalacion de laravel https://laravel.com/docs/4.2#install-laravel
-
 ```
 composer global require "laravel/installer=~1.1"
 ```
--[Laragon Full (64-bit): Apache 2.4, Nginx, MySQL 8, PHP 8, Redis, Memcached, Node.js 18, npm, git](https://laragon.org/download/index.html)
-
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
