@@ -2,13 +2,75 @@
 
 @section('content')
     @include('layouts.navbars.auth.topnav', ['title' => 'Estudiantes'])
-    <div class="container-fluid py-6">
+    <div class="container-fluid py-2 align-items-center">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <form role="form" action="{{ route('estudiantes') }}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="grados" class="form-control-label">Bloque</label>
+                                        <select class="form-control form-control-sm" id="bloques" name="bloques">
+                                            <option value="0">Todos</option>
+                                            @foreach ($bloques as $item)
+                                                <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="grados" class="form-control-label">Grado</label>
+                                        <select class="form-control form-control-sm" id="grados" name="grados">
+                                            <option value="0">Todos</option>
+                                            @foreach ($grados as $item)
+                                                <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="secciones" class="form-control-label">Sección</label>
+                                        <select class="form-control form-control-sm" id="secciones" name="secciones">
+                                            <option value="">Todas</option>
+                                            @foreach ($secciones as $item)
+                                                <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="busqueda" class="form-control-label">Buscar</label>
+                                        <input type="text" class="form-control form-control-sm" id="busqueda"
+                                            name="busqueda" placeholder="Buscar...">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="busqueda" class="form-control-label"
+                                            style="color: white;">Buscar</label>
+                                        <button type="submit"
+                                            class="form-control form-control-sm btn btn-primary btn-sm">BUSCAR</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-0">
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         <div class="d-flex align-items-center">
-                            <h6 class="mb-0">Estudiantes</h6>
                             @if (Auth::user()->rol === 'Admin')
                                 <button type="button" class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal"> + Nuevo</button>
@@ -32,7 +94,7 @@
                         </div>
                     @endif
                     <div class="card">
-                        <div class="table-responsive">
+                        <div class="table-responsive" style="max-height: 400px; overflow-y: Scroll;">
                             <table class="table align-items-center mb-0">
                                 <thead>
                                     <tr>
@@ -58,7 +120,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($estudiante as $item)
+                                    @foreach ($estudiantes as $item)
                                         <tr>
                                             <td>
                                                 <div class="d-flex px-0">
@@ -91,15 +153,12 @@
                                                             data-bs-toggle="modal"
                                                             data-bs-target="#editModalEstudiante{{ $item->id }}">
                                                             <i class="fas fa-edit"></i>
-                                                            <button type="button" class="btn btn-danger btn-xs"
-                                                                id="confirmDelete" data-id="{{ $item->id }}">
+                                                            <button type="button"
+                                                                class="btn btn-danger btn-xs confirm-delete me-2"
+                                                                data-id="{{ $item->id }}">
                                                                 <i class="fas fa-trash-alt"></i>
                                                             </button>
                                                     @endif
-                                                    <button type="button" class="btn btn-success btn-xs"
-                                                        data-bs-toggle="modal">
-                                                        <i class="fas fa-info-circle"></i> <!-- Icono de info -->
-                                                    </button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -108,17 +167,18 @@
                             </table>
                         </div>
                     </div>
+                    <div class="card-footer">
+
+                    </div>
                 </div>
             </div>
         </div>
         {{-- @include('layouts.footers.auth.footer') --}}
     </div>
     @include('components.modals.modal-estudiante')
-    @include('components.modals.modal-edit-estudiante')
-
     <script>
         $(document).ready(function() {
-            $('#confirmDelete').on('click', function() {
+            $('.confirm-delete').on('click', function() {
                 var registroId = $(this).data('id');
                 var deleteUrl = "{{ route('estudiantes.destroy', ':id') }}".replace(':id', registroId);
 
@@ -127,8 +187,8 @@
                     text: '¿Está seguro que desea eliminar este registro? Esta acción eliminará al estudiante y sus registros asociados.',
                     icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: '#d33',
-                    cancelButtonColor: '#3085d6',
+                    confirmButtonColor: '#FA2F13',
+                    cancelButtonColor: '#29BEFF',
                     confirmButtonText: 'Eliminar',
                     cancelButtonText: 'Cancelar',
                 }).then((result) => {
@@ -148,7 +208,7 @@
                                 }).then((result) => {
                                     if (result.isConfirmed) {
                                         location
-                                    .reload(); // Otra acción después de la eliminación
+                                            .reload(); // Otra acción después de la eliminación
                                     }
                                 });
                             }

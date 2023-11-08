@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\estudiantes;
+use App\Models\profesores;
 use Illuminate\Support\Facades\Hash;
 
 class UserProfileController extends Controller
@@ -12,24 +13,18 @@ class UserProfileController extends Controller
     public function show()
     {
         $usuario = auth()->user();
-        $estudiante = estudiantes::where('User_id', $usuario->id)->first();
-        return view('pages.user-profile', compact('usuario','estudiante'));
+        $estudiante = null;
+        $docente = null;
+    
+        if ($usuario->rol === 'Estudiante') {
+            $estudiante = estudiantes::where('User_id', $usuario->id)->first();
+        } elseif ($usuario->rol === 'Docente') {
+            $docente = profesores::where('User_id', $usuario->id)->first();
+        }
+    
+        return view('pages.user-profile', compact('usuario', 'estudiante', 'docente'));
     }
-
-    public function updateInfo(Request $request)
-    {
-
-        $usuario = auth()->user();
-        $estudiante = $usuario->estudiante; // Obtenemos el estudiante asociado al usuario
-
-        $datosUsuario = $request->only(['username', 'email']);
-        $datosEstudiante = $request->only(['nombres', 'apellidos', 'direccion', 'telefono']);
-
-        $usuario->update($datosUsuario);
-        $estudiante->update($datosEstudiante);
-
-        return back()->with(['succes' => 'Los datos se actualizaron satisfactoriamente', 'estudiante' => $estudiante]);
-    }
+    
 
     public function perfilUpdate(Request $request, $id)
     {

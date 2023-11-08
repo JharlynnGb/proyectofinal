@@ -13,7 +13,7 @@
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                 <div class="input-group">
-                    
+
                 </div>
             </div>
             <ul class="navbar-nav  justify-content-end">
@@ -28,7 +28,7 @@
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                             class="nav-link text-white font-weight-bold px-0">
                             <i class="fas fa-sign-out-alt me-sm-1"></i>
-                            <span class="d-sm-inline d-none">Cerrar Sesion</span>
+                            <span class="d-sm-inline d-none">Salir</span>
                         </a>
                     </form>
                 </li>
@@ -43,9 +43,7 @@
                 </li>
                 <li class="nav-item px-3 d-flex align-items-center mt-3">
                     <button type="button" class="btn btn-link text-white" data-bs-toggle="modal"
-                        data-bs-target="#chatModal">Soporte
-                        <i class="fa fa-comment"></i> <!-- Icono de chat -->
-                    </button>
+                        data-bs-target="#chatModal">Soporte</button>
                 </li>
 
                 <li class="nav-item px-3 d-flex align-items-center">
@@ -77,7 +75,7 @@
             <form action="/chatbot-interact" method="post" id="chatForm">
                 @csrf
                 <div class="card-footer text-muted d-flex justify-content-start align-items-center pe-2 pt-2 mt-3">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
+                    <img src="https://cdn-icons-png.flaticon.com/128/599/599305.png"
                         alt="avatar 3" style="width: 40px; height: 100%;">
                     <input type="text" name="message" id="message" class="form-control form-control-ms"
                         placeholder="Type message">
@@ -150,7 +148,7 @@
                 },
                 success: function(response) {
                     // Agrega la respuesta del chatbot al chatbox en el lado izquierdo
-                    addMessage('bot', response.message, 'Jamilet', timestamp);
+                    addMessage('bot', response.message, 'BOT', timestamp);
                 }
             });
 

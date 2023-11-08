@@ -2,7 +2,7 @@
 
 @section('content')
     <main class="main-content  mt-0"
-        style="background-image: url(https://png.pngtree.com/background/20230401/original/pngtree-school-classroom-desk-background-picture-image_2252872.jpg)">
+        style="background-image: url(https://imgs.deperu.com/colegios/ie_88021_alfonso_ugarte_nuevo_chimbote.jpg)">
         <section>
             <div class="page-header min-vh-100">
                 <div class="container">
@@ -19,14 +19,15 @@
                                         @csrf
                                         @method('post')
                                         <div class="flex flex-col mb-3">
-                                            <input type="email" name="email" class="form-control"
-                                                placeholder="Email" value="{{ old('email') }}" aria-label="Email">
+                                            <input type="email" name="email" class="form-control" placeholder="Email"
+                                                value="{{ old('email') }}" aria-label="Email">
                                             @error('email')
                                                 <p class="text-danger text-xs pt-1"> {{ $message }} </p>
                                             @enderror
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Enviar enlace</button>
+                                            <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Enviar
+                                                enlace</button>
                                         </div>
                                     </form>
                                 </div>

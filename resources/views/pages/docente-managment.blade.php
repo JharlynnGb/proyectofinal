@@ -2,7 +2,37 @@
 
 @section('content')
     @include('layouts.navbars.auth.topnav', ['title' => 'Docentes'])
-    <div class="container-fluid py-6">
+    <div class="container-fluid py-2 align-items-center">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <form role="form" action="{{route('docentes')}}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="busqueda" class="form-control-label">Buscar</label>
+                                        <input type="text" class="form-control form-control-sm" id="busqueda"
+                                            name="busqueda" placeholder="Buscar...">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="busqueda" class="form-control-label"
+                                            style="color: white;">Buscar</label>
+                                        <button type="submit"
+                                            class="form-control form-control-sm btn btn-primary btn-sm">BUSCAR</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-0">
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
@@ -50,9 +80,7 @@
                                         <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                             Telefono</th>
-                                        <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            Bloque</th>
+
                                         <th
                                             class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7 ps-2">
                                             Acciones</th>
@@ -84,9 +112,6 @@
                                             <td>
                                                 <p class="text-xs font-weight-bold mb-0">{{ $item->Telefono }}</p>
                                             </td>
-                                            <td>
-                                                <p class="text-xs font-weight-bold mb-0">{{ $item->Bloque }}</p>
-                                            </td>
                                             <td class="align-middle">
                                                 <div class="d-flex px-1 py-1 justify-content-center align-items-center">
                                                     @if (Auth::user()->rol === 'Admin')
@@ -95,15 +120,12 @@
                                                             data-bs-target="#editModalDocente{{ $item->id }}">
                                                             <i class="fas fa-edit"></i> <!-- Icono de edición -->
                                                         </button>
-                                                        <button type="button" class="btn btn-danger btn-xs me-2"
-                                                            id="confirmDeleteDocente" data-id="{{ $item->id }}">
+                                                        <button type="button"
+                                                            class="btn btn-danger btn-xs me-2 confim-delete-docente"
+                                                            data-id="{{ $item->id }}">
                                                             <i class="fas fa-trash-alt"></i> <!-- Icono de eliminación -->
                                                         </button>
                                                     @endif
-                                                    <button type="button" class="btn btn-success btn-xs"
-                                                        data-bs-toggle="modal" data-bs-target="#ModalProfile">
-                                                        <i class="fas fa-info-circle"></i> <!-- Icono de eliminación -->
-                                                    </button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -122,17 +144,17 @@
 
     <script>
         $(document).ready(function() {
-            $('#confirmDeleteDocente').on('click', function() {
+            $('.confim-delete-docente').on('click', function() {
                 var registroId = $(this).data('id');
                 var deleteUrl = "{{ route('docentes.destroy', ':id') }}".replace(':id', registroId);
-    
+
                 Swal.fire({
                     title: '¡Advertencia!',
                     text: '¿Está seguro que desea eliminar este registro?',
                     icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: '#d33',
-                    cancelButtonColor: '#3085d6',
+                    confirmButtonColor: '#FA2F13',
+                    cancelButtonColor: '#29BEFF',
                     confirmButtonText: 'Eliminar',
                     cancelButtonText: 'Cancelar',
                     customClass: {
@@ -161,7 +183,8 @@
                                     },
                                 }).then((result) => {
                                     if (result.isConfirmed) {
-                                        location.reload(); // Otra acción después de la eliminación
+                                        location
+                                            .reload(); // Otra acción después de la eliminación
                                     }
                                 });
                             }

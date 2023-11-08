@@ -6,17 +6,43 @@
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
-                    <div class="card-header pb-0">
-                        <h6>Usuarios del sistema</h6>
-                    </div>
+                    <form role="form-inline" action="" enctype="multipart/form-data">
+                        @csrf
+                        <div class="card-header pb-0">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <select class="form-control form-control-sm" id="rol" name="rol">
+                                            <option value="0">rol</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-sm" id="busqueda"
+                                            name="busqueda" placeholder="Buscar...">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <button type="submit"
+                                            class="form-control form-control-sm btn btn-success btn-sm">BUSCAR</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                     <div class="card-body px-0 pt-0 pb-2">
-                        <div class="table-responsive p-0">
+                        <div class="table-responsive" style="max-height: 400px; overflow-y: Scroll;">
                             <table class="table align-items-center mb-0">
-                                <thead>
+                                <thead class="fixed">
                                     <tr>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Datos</th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                             Rol</th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -24,9 +50,6 @@
                                         <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Fecha reg</th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Action</th>
                                         <th class="text-secondary opacity-7"></th>
                                     </tr>
                                 </thead>
@@ -59,19 +82,16 @@
                                                 <span
                                                     class="text-secondary text-xs font-weight-bold">{{ $item->created_at }}</span>
                                             </td>
-                                            <td class="align-middle">
-                                                <div class="d-flex px-1 py-1 justify-content-center align-items-center">
-                                                    <button type="button" class="btn btn-success btn-xs">
-                                                        <i class="fas fa-info-circle"></i> <!-- Icono de eliminación -->
-                                                    </button>
-                                                </div>
-                                            </td>
+                                    
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
+                </div>
+                <div class="card-footer">
+
                 </div>
             </div>
         </div>

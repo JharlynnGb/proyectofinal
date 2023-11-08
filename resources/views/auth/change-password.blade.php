@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <main class="main-content  mt-0">
+    <main class="main-content  mt-0"
+        style="background-image: url(https://imgs.deperu.com/colegios/ie_88021_alfonso_ugarte_nuevo_chimbote.jpg)">
         <section>
             <div class="page-header min-vh-100">
                 <div class="container">
@@ -26,7 +27,7 @@
                                         <div class="flex flex-col mb-3">
                                             <input id="passwordInput" type="password" name="password" class="form-control"
                                                 placeholder="Password" aria-label="Password">
-                                            {{--<i class="fas fa-eye " id="togglePassword"></i>--}}
+                                            {{-- <i class="fas fa-eye " id="togglePassword"></i> --}}
                                             @error('password')
                                                 <p class="text-danger text-xs pt-1"> {{ $message }} </p>
                                             @enderror

@@ -102,11 +102,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn bg-gradient-secondary"
-                            data-bs-dismiss="modal">Close</button>
+                    <div class="modal-footer item-center">
+                        <button type="button" class="btn bg-gradient-dark"
+                            data-bs-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-save"></i>
+                            Guardar
                         </button>
                     </div>
                 </form>
@@ -148,7 +148,7 @@
 </div>
 
 {{-- modal update --}}
-@foreach ($estudiante as $estudiantes)
+@foreach ($estudiantes as $estudiantes)
     <div class="modal fade " id="editModalEstudiante{{ $estudiantes->id }}" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -259,11 +259,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn bg-gradient-secondary"
-                                data-bs-dismiss="modal">Close</button>
+                        <div class="modal-footer item-center">
+                            <button type="button" class="btn bg-gradient-dark"
+                                data-bs-dismiss="modal">Cancelar</button>
                             <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-save"></i>
+                                Guardar
                             </button>
                         </div>
                     </form>

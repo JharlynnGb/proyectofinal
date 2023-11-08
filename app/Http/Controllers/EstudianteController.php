@@ -9,6 +9,7 @@ use App\Models\estudiantes;
 use App\Models\Grados;
 use App\Models\Seccion;
 use App\Models\User;
+use App\Models\bimestres;
 use Illuminate\Support\Facades\Hash;
 
 class EstudianteController extends Controller
@@ -16,14 +17,42 @@ class EstudianteController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $grados = Grados::all();
-        $bloques = Bloque::all();
         $secciones = Seccion::all();
-        $estudiante = Estudiantes::all(); // Asegúrate de que el modelo esté correctamente importado.
+        $bloques = Bloque::all();
+        
+        $bloqueSeleccionado = $request->get('bloques');
+        $gradoSeleccionado = $request->get('grados');
+        $seccionSeleccionada = $request->get('secciones');
+        $busqueda = $request->get('busqueda');
 
-        return view('pages.estudiante-managment', compact('estudiante', 'secciones', 'bloques', 'grados'));
+        $estudiantes = Estudiantes::query();
+
+        if ($bloqueSeleccionado != 0) {
+            $estudiantes->where('Bloque', $bloqueSeleccionado);
+        }
+
+        if ($gradoSeleccionado != 0) {
+            $estudiantes->where('Grado', $gradoSeleccionado);
+        }
+
+        if ($seccionSeleccionada != 0) {
+            $estudiantes->where('Seccion', $seccionSeleccionada);
+        }
+
+        if (!empty($busqueda)) {
+            $estudiantes->where(function ($query) use ($busqueda) {
+                $query->where('dni', 'like', "%$busqueda%")
+                    ->orWhere('Nombres', 'like', "%$busqueda%")
+                    ->orWhere('Apellidos', 'like', "%$busqueda%");
+            });
+        }
+
+        $estudiantes = $estudiantes->get();// Asegúrate de que el modelo esté correctamente importado.
+
+        return view('pages.estudiante-managment', compact('estudiantes', 'secciones', 'bloques', 'grados'));
     }
 
     /**
@@ -95,6 +124,7 @@ class EstudianteController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        
         $estudiante = estudiantes::find($id);
         $estudiante->update($request->all());
 
@@ -113,11 +143,11 @@ class EstudianteController extends Controller
             return back()->with('error', 'Estudiante no encontrado');
         }
 
-        User::where('id', $estudiante->User_id)->delete();
-        // Elimina al usuario asociado
-
         // Elimina todas las boletas asociadas al estudiante
         Boletas::where('idEstudiante', $estudiante->id)->delete();
+
+        // Elimina al usuario asociado
+        User::where('id', $estudiante->User_id)->delete();
 
         // Finalmente, elimina al estudiante
         $estudiante->delete();

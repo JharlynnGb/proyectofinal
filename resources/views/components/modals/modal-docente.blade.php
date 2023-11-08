@@ -66,11 +66,10 @@
                               </div>
                           </div>
                       </div>
-                      <div class="modal-footer">
-                          <button type="button" class="btn bg-gradient-secondary"
-                              data-bs-dismiss="modal">Close</button>
+                      <div class="modal-footer item-center">
+                          <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Cancelar</button>
                           <button type="submit" class="btn btn-primary">
-                              <i class="fas fa-save"></i>
+                              Guardar
                           </button>
                       </div>
                   </form>
@@ -94,7 +93,7 @@
                   </button>
               </div>
               <div class="modal-body">
-                ....
+                  ....
               </div>
               <div class="modal-footer">
 
