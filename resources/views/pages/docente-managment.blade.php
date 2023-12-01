@@ -42,16 +42,6 @@
                                 <button type="button" class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal"> + Nuevo</button>
                                 <!-- Agrega un margen a la izquierda del botón "Carga masiva" para separarlo -->
-                                <div class="dropdown d-flex align-items-center" style="margin-left: 20px;">
-                                    <button class="btn btn-info btn-sm ms-auto dropdown-toggle" type="button"
-                                        id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Carga Masiva
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item" href="#">Descargar Plantilla</a></li>
-                                        <li><a class="dropdown-item" href="#">Cargar plantilla</a></li>
-                                    </ul>
-                                </div>
                             @endif
                         </div>
                     </div>

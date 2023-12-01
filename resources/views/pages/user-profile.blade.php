@@ -8,7 +8,7 @@
                 <div class="row gx-2">
                     <div class="col-auto">
                         <div class="avatar avatar-xl position-relative">
-                            <img src="https://clipart-library.com/images/pT7K76y8c.jpg" alt="profile_image"
+                            <img src="https://cdn-icons-png.flaticon.com/128/599/599305.png" alt="profile_image"
                                 class="w-100 border-radius-lg shadow-sm">
                         </div>
                     </div>

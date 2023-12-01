@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-5 mt-4">
+            {{--            <div class="col-md-5 mt-4">
                 <div class="card h-100 mb-4">
                     <div class="card-header pb-0 px-3">
                         <div class="row">
@@ -86,7 +86,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div>--}}
         </div>
         {{-- @include('layouts.footers.auth.footer') --}}
     </div>

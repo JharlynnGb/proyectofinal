@@ -82,27 +82,23 @@
                             @include('components.alert')
                         </div>
                         <div class="card">
-                            <div class="table-responsive" style="max-height: 400px; overflow-y: Scroll;">
+                            <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
                                 <table class="table align-items-center mb-0">
                                     <thead>
-                                        <tr>
+                                        <tr style="position: sticky; top: 0; background-color: #fff; z-index: 2;">
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 DNI
                                             </th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 Nombres y Apellidos
                                             </th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 Grado y Seccion
                                             </th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 Bimestre
                                             </th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 Boleta
                                             </th>
                                         </tr>
@@ -129,19 +125,19 @@
                                                     <p class="text-xs font-weight-bold mb-0">{{ $item->Grado }}</p>
                                                 </td>
                                                 <td>
-                                                    <select class="form-control-sm" name="idBimestre[]">
-                                                        <option value="0">Todas</option>
+                                                    <select class="form-control-sm" name="idBimestre[]" required>
+                                                        <option value="" disabled selected>Todas</option>
                                                         @foreach ($bimestres as $bimestre)
-                                                            <option value="{{ $bimestre->id }}">
+                                                            <option value="{{ $bimestre->id }}"
+                                                                {{ old('idBimestre') == $bimestre->id ? 'selected' : '' }}>
                                                                 {{ $bimestre->descripcion }}
                                                             </option>
                                                         @endforeach
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <input type="file" class="form-control form-control-sm"
-                                                        lang="en" name="Boleta[]">
-                                                </td>
+                                                    <input type="file" class="form-control form-control-sm" lang="en" name="Boleta[]">
+                                                </td>                                                
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -153,5 +149,6 @@
             </div>
         </form>
     </div>
+    
     {{-- @include('layouts.footers.auth.footer') --}}
 @endsection

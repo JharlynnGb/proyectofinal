@@ -11,4 +11,9 @@ class Seccion extends Model
 
     protected $table = 'secciones';
     protected $fillable=['descripcion'];
+
+    public function estudiantes()
+{
+    return $this->hasMany(Estudiantes::class, 'Seccion', 'id');
+}
 }

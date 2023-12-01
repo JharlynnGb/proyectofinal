@@ -22,35 +22,31 @@ class EstudianteController extends Controller
         $grados = Grados::all();
         $secciones = Seccion::all();
         $bloques = Bloque::all();
-        
+
         $bloqueSeleccionado = $request->get('bloques');
         $gradoSeleccionado = $request->get('grados');
         $seccionSeleccionada = $request->get('secciones');
         $busqueda = $request->get('busqueda');
 
-        $estudiantes = Estudiantes::query();
-
-        if ($bloqueSeleccionado != 0) {
-            $estudiantes->where('Bloque', $bloqueSeleccionado);
-        }
-
-        if ($gradoSeleccionado != 0) {
-            $estudiantes->where('Grado', $gradoSeleccionado);
-        }
-
-        if ($seccionSeleccionada != 0) {
-            $estudiantes->where('Seccion', $seccionSeleccionada);
-        }
-
-        if (!empty($busqueda)) {
-            $estudiantes->where(function ($query) use ($busqueda) {
-                $query->where('dni', 'like', "%$busqueda%")
-                    ->orWhere('Nombres', 'like', "%$busqueda%")
-                    ->orWhere('Apellidos', 'like', "%$busqueda%");
-            });
-        }
-
-        $estudiantes = $estudiantes->get();// Asegúrate de que el modelo esté correctamente importado.
+        $estudiantes = Estudiantes::query()
+            ->with('grados', 'secciones', 'bloques') // Carga las relaciones
+            ->when($bloqueSeleccionado != 0, function ($query) use ($bloqueSeleccionado) {
+                return $query->where('Bloque', $bloqueSeleccionado);
+            })
+            ->when($gradoSeleccionado != 0, function ($query) use ($gradoSeleccionado) {
+                return $query->where('Grado', $gradoSeleccionado);
+            })
+            ->when($seccionSeleccionada != 0, function ($query) use ($seccionSeleccionada) {
+                return $query->where('Seccion', $seccionSeleccionada);
+            })
+            ->when(!empty($busqueda), function ($query) use ($busqueda) {
+                return $query->where(function ($subquery) use ($busqueda) {
+                    $subquery->where('dni', 'like', "%$busqueda%")
+                        ->orWhere('Nombres', 'like', "%$busqueda%")
+                        ->orWhere('Apellidos', 'like', "%$busqueda%");
+                });
+            })
+            ->get();
 
         return view('pages.estudiante-managment', compact('estudiantes', 'secciones', 'bloques', 'grados'));
     }
@@ -73,6 +69,7 @@ class EstudianteController extends Controller
             'Seccion' => 'required',
             'FechaNacimiento' => 'required',
         ]);
+
 
         // Obtener el primer nombre desde la columna 'Nombres'
         $nombresArray = explode(' ', $data['Nombres']);
@@ -124,7 +121,7 @@ class EstudianteController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
+
         $estudiante = estudiantes::find($id);
         $estudiante->update($request->all());
 

@@ -9,7 +9,12 @@ class Grados extends Model
 {
     use HasFactory;
 
-    protected $table='grados';
+    protected $table = 'grados';
 
-    protected $fillable=['descripcion'];
+    protected $fillable = ['descripcion'];
+
+    public function estudiantes()
+    {
+        return $this->hasMany(Estudiantes::class, 'Grado', 'id');
+    }
 }

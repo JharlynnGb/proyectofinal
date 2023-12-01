@@ -27,11 +27,11 @@ class estudiantes extends Model
     }
     public function grados()
     {
-        return $this->belongsTo(Bloque::class, 'Grado', 'id');
+        return $this->belongsTo(Grados::class, 'Grado', 'id');
     }
     public function secciones()
     {
-        return $this->belongsTo(Bloque::class, 'Seccion', 'id');
+        return $this->belongsTo(Seccion::class, 'Seccion', 'id');
     }
     public function users()
     {

@@ -9,6 +9,11 @@ class Bloque extends Model
 {
     use HasFactory;
 
-    protected $table="bloques";
-    protected $fillable=['descripcion'];
+    protected $table = "bloques";
+    protected $fillable = ['descripcion'];
+
+    public function estudiantes()
+    {
+        return $this->hasMany(Estudiantes::class, 'Bloque', 'id');
+    }
 }

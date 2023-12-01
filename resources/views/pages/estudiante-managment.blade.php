@@ -25,7 +25,7 @@
                                     <div class="form-group">
                                         <label for="grados" class="form-control-label">Grado</label>
                                         <select class="form-control form-control-sm" id="grados" name="grados">
-                                            <option value="0">Todos</option>
+                                            <option value="" disabled selected>Todos</option>
                                             @foreach ($grados as $item)
                                                 <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
                                             @endforeach
@@ -36,7 +36,7 @@
                                     <div class="form-group">
                                         <label for="secciones" class="form-control-label">Sección</label>
                                         <select class="form-control form-control-sm" id="secciones" name="secciones">
-                                            <option value="">Todas</option>
+                                            <option  value="" disabled selected>Todas</option>
                                             @foreach ($secciones as $item)
                                                 <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
                                             @endforeach
@@ -75,16 +75,6 @@
                                 <button type="button" class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal"> + Nuevo</button>
                                 <!-- Agrega un margen a la izquierda del botón "Carga masiva" para separarlo -->
-                                <div class="dropdown d-flex align-items-center" style="margin-left: 20px;">
-                                    <button class="btn btn-info btn-sm ms-auto dropdown-toggle" type="button"
-                                        id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Carga Masiva
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item" href="#">Descargar Plantilla</a></li>
-                                        <li><a class="dropdown-item" href="#">Cargar plantilla</a></li>
-                                    </ul>
-                                </div>
                             @endif
                         </div>
                     </div>
@@ -141,10 +131,11 @@
                                             </td>
                                             <td>
                                                 <p class="text-xs font-weight-bold mb-0">
-                                                    {{ $item->Grado }}{{ $item->Seccion }}</p>
+                                                    {{ $item->grados->descripcion }}</p>
                                             </td>
                                             <td>
-                                                <p class="text-xs font-weight-bold mb-0">por corregir</p>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $item->bloques->descripcion }}
+                                                </p>
                                             </td>
                                             <td class="align-middle">
                                                 <div class="d-flex px-1 py-1 justify-content-center align-items-center">

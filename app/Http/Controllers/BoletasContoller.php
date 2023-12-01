@@ -111,7 +111,7 @@ class BoletasContoller extends Controller
 
         $profesor = Profesores::where('User_id', $user->id)->first();
         if (!$profesor) {
-            return back()->with('error', 'No se encontró un profesor asociado a su cuenta');
+            return back()->with('error', 'Usted no cuenta con el rol de Docente');
         }
 
         // Obtiene el ID del profesor
