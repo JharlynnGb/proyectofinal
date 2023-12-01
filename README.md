@@ -247,7 +247,7 @@ INSERT INTO `estudiantes` (`id`, `User_id`, `dni`, `Nombres`, `Apellidos`, `Corr
 INSERT INTO `estudiantes` (`id`, `User_id`, `dni`, `Nombres`, `Apellidos`, `Correo`, `Telefono`, `Direccion`, `Bloque`, `Grado`, `Seccion`, `FechaNacimiento`, `created_at`, `updated_at`) VALUES (86, 112, '34567890W', 'Victor Manuel', 'Castillo Miranda', 'victor.manuel@example.com', '932567890', 'Pasaje STU, Villa W', 1, 6, 2, '2007-04-23', '2023-12-01 01:27:01', '2023-12-01 01:27:01');
 INSERT INTO `estudiantes` (`id`, `User_id`, `dni`, `Nombres`, `Apellidos`, `Correo`, `Telefono`, `Direccion`, `Bloque`, `Grado`, `Seccion`, `FechaNacimiento`, `created_at`, `updated_at`) VALUES (87, 113, '45678901X', 'Adriana Marcela', 'Jimenez Guerrero', 'adriana.marcela@example.com', '943678901', 'Carrera 456, Pueblo X', 1, 6, 2, '2008-11-09', '2023-12-01 01:28:22', '2023-12-01 01:28:22');
 INSERT INTO `estudiantes` (`id`, `User_id`, `dni`, `Nombres`, `Apellidos`, `Correo`, `Telefono`, `Direccion`, `Bloque`, `Grado`, `Seccion`, `FechaNacimiento`, `created_at`, `updated_at`) VALUES (88, 114, '56789012Y', 'Carlos Eduardo', 'Nunez Molina', 'carlos.eduardo@example.com', '954789012', 'Plaza 789, Ciudad Y', 1, 6, 2, '2009-08-18', '2023-12-01 01:29:26', '2023-12-01 01:29:26');
-```
+
 -- TABLA USUARIOS
 
 INSERT INTO `usuarios` (`id`, `username`, `correo`, `password`, `rol`, `remember_token`, `estado`, `created_at`, `updated_at`) VALUES (89, 'Juan', 'juan.perez@example.com', '$2y$10$mqtiRKYikdgihT4NntXNhO4umtPZplPMX07ImBn3LaH43vMlGRiJS', 'Estudiante', NULL, 1, '2023-12-01 00:54:07', '2023-12-01 00:54:07');
@@ -275,6 +275,8 @@ INSERT INTO `usuarios` (`id`, `username`, `correo`, `password`, `rol`, `remember
 INSERT INTO `usuarios` (`id`, `username`, `correo`, `password`, `rol`, `remember_token`, `estado`, `created_at`, `updated_at`) VALUES (112, 'Victor', 'victor.manuel@example.com', '$2y$10$A6bFjjpCe82MGxfunWLpQekK9m1KsXjw3gdAiyxc1lpEiaoXhHb92', 'Estudiante', NULL, 1, '2023-12-01 01:27:01', '2023-12-01 01:27:01');
 INSERT INTO `usuarios` (`id`, `username`, `correo`, `password`, `rol`, `remember_token`, `estado`, `created_at`, `updated_at`) VALUES (113, 'Adriana', 'adriana.marcela@example.com', '$2y$10$cHcDvQzjWgXYMPLPrdTLz.a/dEpogTYeUDjRpxSszjqd7ETnyBR/u', 'Estudiante', NULL, 1, '2023-12-01 01:28:22', '2023-12-01 01:28:22');
 INSERT INTO `usuarios` (`id`, `username`, `correo`, `password`, `rol`, `remember_token`, `estado`, `created_at`, `updated_at`) VALUES (114, 'Carlos', 'carlos.eduardo@example.com', '$2y$10$vhoqlBtgZILYqDi3fb3WP.XP5gmIhRqV3WROCIXKHNeO9Qu9N3l.G', 'Estudiante', NULL, 1, '2023-12-01 01:29:26', '2023-12-01 01:29:26');
+```
+
 
 ## EJECUCION 
 Si los pasos anteriores se completaron sin problemas correr el programa
