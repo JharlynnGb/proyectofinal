@@ -249,6 +249,7 @@ INSERT INTO `estudiantes` (`id`, `User_id`, `dni`, `Nombres`, `Apellidos`, `Corr
 INSERT INTO `estudiantes` (`id`, `User_id`, `dni`, `Nombres`, `Apellidos`, `Correo`, `Telefono`, `Direccion`, `Bloque`, `Grado`, `Seccion`, `FechaNacimiento`, `created_at`, `updated_at`) VALUES (88, 114, '56789012Y', 'Carlos Eduardo', 'Nunez Molina', 'carlos.eduardo@example.com', '954789012', 'Plaza 789, Ciudad Y', 1, 6, 2, '2009-08-18', '2023-12-01 01:29:26', '2023-12-01 01:29:26');
 ```
 -- TABLA USUARIOS
+
 INSERT INTO `usuarios` (`id`, `username`, `correo`, `password`, `rol`, `remember_token`, `estado`, `created_at`, `updated_at`) VALUES (89, 'Juan', 'juan.perez@example.com', '$2y$10$mqtiRKYikdgihT4NntXNhO4umtPZplPMX07ImBn3LaH43vMlGRiJS', 'Estudiante', NULL, 1, '2023-12-01 00:54:07', '2023-12-01 00:54:07');
 INSERT INTO `usuarios` (`id`, `username`, `correo`, `password`, `rol`, `remember_token`, `estado`, `created_at`, `updated_at`) VALUES (90, 'Maria', 'maria.fernanda@example.com', '$2y$10$TTFAXFf3UZvWHhIJM50s8u/B6xL41ns409DV6I9tT4LHDUY2V6n4u', 'Estudiante', NULL, 1, '2023-12-01 00:56:11', '2023-12-01 00:56:11');
 INSERT INTO `usuarios` (`id`, `username`, `correo`, `password`, `rol`, `remember_token`, `estado`, `created_at`, `updated_at`) VALUES (91, 'Pedro', 'pedro.alejandro@example.com', '$2y$10$9Vsb05wcuMgjbNX.iBqUzeqI6jvqJidee9u8AS/00nDM1Nssq3R6S', 'Estudiante', NULL, 1, '2023-12-01 00:58:05', '2023-12-01 00:58:05');
