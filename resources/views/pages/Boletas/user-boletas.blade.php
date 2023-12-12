@@ -25,15 +25,19 @@
                                                 class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
                                     </div>
                                     <div class="ms-auto text-end">
-                                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{ asset('storage/boletas/' .$boleta->Boleta) }}"><i
-                                                class="fa fa-download me-2" download></i>Download</a>
+                                       
+                                       <a class="btn btn-link text-dark px-3 mb-0" href="#"
+                                           onclick="verBoleta('{{ asset('storage/boletas/' . $boleta->Boleta) }}')">
+                                           <i class="fas fa-file-pdf text-danger me-2" aria-hidden="true"></i> View / Dowloand
+                                       </a>
 
-                                        <a class="btn btn-link text-dark px-3 mb-0"
-                                            href="{{ asset('storage/boletas/' .$boleta->Boleta) }}">
-                                            <i class="fas fa-file-pdf text-dark me-2" aria-hidden="true"></i> View
-                                        </a>
-
-                                    </div>
+                                       <script>
+                                           function verBoleta(pdfURL) {
+                                               // Abre una nueva ventana con el PDF
+                                               window.open(pdfURL, '_blank', 'toolbar=0,location=0,menubar=0');
+                                           }
+                                       </script>
+                                   </div>
                                 </li>
                             @endforeach
                         </ul>

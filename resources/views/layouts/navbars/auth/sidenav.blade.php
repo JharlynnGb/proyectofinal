@@ -11,7 +11,7 @@
     <hr class="horizontal dark ">
     <div class="collapse navbar-collapse h-auto w-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
-            @if (Auth::user()->rol === 'Admin' || Auth::user()->rol === 'Docente')
+            
             <li class="nav-item ">
                 <a class="nav-link {{ Route::currentRouteName() == 'home' ? 'active' : '' }}"
                     href="{{ route('home') }}">
@@ -22,7 +22,7 @@
                     <span class="nav-link-text ms-1">Inicio</span>
                 </a>
             </li>
-            @endif
+            
             @if (Auth::user()->rol === 'Admin')
                 <li class="nav-item">
                     <a class="nav-link {{ Route::currentRouteName() == 'user-managment' ? 'active' : '' }}"

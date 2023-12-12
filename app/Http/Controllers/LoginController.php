@@ -24,18 +24,18 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'username' => ['required'],
+            'correo' => ['required'],
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
+        if (Auth::attempt(['correo' => $request->correo, 'password' => $request->password])) {
             $request->session()->regenerate();
 
             return redirect()->intended('dashboard');
         }
 
         return back()->withErrors([
-            'username' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
+            'correo' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
         ]);
     }
 

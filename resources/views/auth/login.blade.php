@@ -12,15 +12,15 @@
                                 <div class="card-header text-center pt-4">
                                     <h5>Iniciar Sesion</h5>
                                     <p class="mb-1 text-sm mx-auto">
-                                        Ingresa con tu usuario y contraseña</p>
+                                        Ingresa con tu Email y Contraseña</p>
                                 </div>
                                 <div class="card-body">
                                     <form role="form" method="POST" action="{{ route('login.perform') }}">
                                         @csrf
                                         <div class="mb-3">
-                                            <input type="text" name="username" class="form-control"
-                                                value="{{ old('username') }}" id="username" placeholder="usuario">
-                                            @error('username')
+                                            <input type="email" name="correo" class="form-control"
+                                                value="{{ old('correo') }}" id="correo" placeholder="Correo Electronico">
+                                            @error('correo')
                                                 <p class="text-danger text-xs pt-1">{{ $message }}</p>
                                             @enderror
                                         </div>
